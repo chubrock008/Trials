@@ -1,0 +1,75 @@
+So this is a new note series for coding
+to create a new file using git bash we use the command 
+    $ touch 'name of file.extension'(e.g touch index.html)
+
+To create a git repository in a folder, 
+    we have to first, add the folder to our workspace, then open the 
+    folder in a our file explorer, right click, select the git bash 
+    option. this will open up the dialogue box. then we input the command
+    "$ git init" this will create a repository for your works here. FYI this 
+    folder will be hidden, so to see it, we might have to enable hidden files
+
+We also have to add our name and email address to the git repository. This is 
+done with the following command
+    $ git config --global user.name 'chubrock'
+    $ git config --global user.email 'forchuby@gmail.com'
+
+Now that we have created a master repisotory we can add files, with the command:
+    $ git add index.html 'to add individual file'
+    
+    $ git status "gives us the status of the files added, that are waiting
+                  to be committed"
+    
+    $ git rm --cached "file name" removes the git file from the commited branch.
+    
+    $ git add *.html will add all files with ".html" attached to them
+    
+    $ git add "." will add all the files in the directory to the master
+   
+    $ git commit will commit all files in the staging area. when using Visual Studio
+        Code, a pop will appear on the editor. remove the '#' infront of the initial 
+        commit, save (i think) then close the window to approve commit. there's a 2nd 
+        method which will be shown below.
+   
+    $ git commit -m 'coment goes here' (e.g $ commit -m 'changed app.js')
+    
+    $ clear removes everything on the bash dialogue box.
+    
+    $ touch ".gitignore" will create a ignore folder for git. this cant be created in 
+        file explorer as windows will think its a empty name file. so it has to be created 
+        on the bash command line interface.
+        All files added to this file/folder will not be committed. To add files to this 
+        directory all we do is input the name of the file, in the .gitignore directory 
+        on our editor. E.g (open .gitignore on the editor and type in log.txt and save).
+        all changes made to this file wont show up when checking status and wont be uploaded
+        to the master repository.
+        It is also possible to exclude entire directories as well, this can be done by
+        adding the directory to the ignore repository like this 
+        "/dir1" [r "/dir2"] in the .gitignore directory.
+    $ git branch "chuby's branch" helps create a branch in the master directory, this way 
+        if i am working with multiple people i can still work on my own piece 
+        without affecting what the others are doing.
+    $ git checkout chuby's branch, will allow to switch to the branch we want to work on. In 
+        this case it is chuby's branch, so the above listed command will take us there and
+        all changes we make there will be committed to that branch as opposed to the master branch.
+
+    $ git checkout login will allow us to switch from the master branch to the local branch 
+        we want to edit, which will be the "login branch" in this instance. When we switch to 
+        the login branch we can edit changes locally that can be added later to the master
+
+    $ git merge login will allow us to merge the local branch (login branch) to the master 
+        branch
+    
+    $ git remote shows all the active repositories
+        to add your own repository, go to github and copy the repository address like below
+
+    $ git remote add origin https://github.com/chubrock008/Collection1.git this allows us to a
+        repository where we publish/upload our code to a specific git repository. This repository 
+        is created on github and we can get the necessary address/path from there.
+
+    $ git push -u origin master This allows to push our code to the master repository on our
+        github.
+
+    Trying to see if only push will work
+
+
