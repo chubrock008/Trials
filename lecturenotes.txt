@@ -18,6 +18,15 @@ When we are stuck, we could ask git for help with the following command
     $ git help <verb>
     $ git <verb> --help
 
+We can see a list of all the files we have in the directory with the command;
+    $ ls will list all the vissible files in the directory
+    $ ls -la will list all files (both hidden and visible) files in the directory
+
+ If we want to stop trackinig a project all we have to do is delete the .git
+ directory, we can do this 2 ways by physically deleting the directory/folder
+ from file explorer or using the command below
+    $ rm -rf .git   
+
 Now that we have created a master repisotory we can add files, with the command:
     $ git add index.html 'to add individual file'
     
