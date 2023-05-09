@@ -14,6 +14,10 @@ done with the following command
     $ git config --global user.name 'chubrock'
     $ git config --global user.email 'forchuby@gmail.com'
 
+When we are stuck, we could ask git for help with the following command
+    $ git help <verb>
+    $ git <verb> --help
+
 Now that we have created a master repisotory we can add files, with the command:
     $ git add index.html 'to add individual file'
     
@@ -70,6 +74,6 @@ Now that we have created a master repisotory we can add files, with the command:
     $ git push -u origin master This allows to push our code to the master repository on our
         github.
 
-    Trying to see if only push will work
+    
 
 
