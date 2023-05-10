@@ -32,11 +32,14 @@ Now that we have created a master repisotory we can add files, with the command:
     
     $ git status "gives us the status of the files added, that are waiting
                   to be committed"
-    
+
+There are multiple ways to remove files from the staging area, they are shown below
     $ git rm --cached "file name" removes the git file from the commited branch.
+    $ git reset will remove all files from the stagging area
+    $ git reset log.txt will remove the particular file
     
     $ git add *.html will add all files with ".html" attached to them
-    
+    $ git  add -A will add all untracked files to the staging area
     $ git add "." will add all the files in the directory to the master
    
     $ git commit will commit all files in the staging area. when using Visual Studio
@@ -44,9 +47,14 @@ Now that we have created a master repisotory we can add files, with the command:
         commit, save (i think) then close the window to approve commit. there's a 2nd 
         method which will be shown below.
    
-    $ git commit -m 'coment goes here' (e.g $ commit -m 'changed app.js')
+    $ git commit -m 'coment goes here' (e.g $ commit -m 'changed app.js'). the -m stands
+        for message hence we add the ''. this way we can track all the commits,
+        that is why it is important to leave good reference messages.
     
-    $ clear removes everything on the bash dialogue box.
+    $ git log shows all the commits that have been carried out in that particular directory
+
+If the command line editor is cluttered you can clear the screen by using the command below    
+    $ clear this removes everything on the bash dialogue box.
     
     $ touch ".gitignore" will create a ignore folder for git. this cant be created in 
         file explorer as windows will think its a empty name file. so it has to be created 
@@ -59,20 +67,39 @@ Now that we have created a master repisotory we can add files, with the command:
         It is also possible to exclude entire directories as well, this can be done by
         adding the directory to the ignore repository like this 
         "/dir1" [r "/dir2"] in the .gitignore directory.
-    $ git branch "chuby's branch" helps create a branch in the master directory, this way 
-        if i am working with multiple people i can still work on my own piece 
-        without affecting what the others are doing.
-    $ git checkout chuby's branch, will allow to switch to the branch we want to work on. In 
-        this case it is chuby's branch, so the above listed command will take us there and
-        all changes we make there will be committed to that branch as opposed to the master branch.
+
+We can create a branch in the master directory, this way if i am working with multiple people 
+i can still work on my own piece of the code without affecting what the others are doing. it is
+useful when i want to work on specific areas of the code or a specific feature, i can create a 
+branch and play around with before merging to the master. the command for creating branches are 
+as follows
+
+    $ git branch "chuby's branch"
+
+If we want to switch to the branch we want to work on. In this case it is chuby's branch, so the 
+above listed command will take us there and all changes we make there will be committed to that 
+branch as opposed to the master branch. 
+
+    $ git checkout chuby's branch, 
 
     $ git checkout login will allow us to switch from the master branch to the local branch 
         we want to edit, which will be the "login branch" in this instance. When we switch to 
         the login branch we can edit changes locally that can be added later to the master
 
-    $ git merge login will allow us to merge the local branch (login branch) to the master 
-        branch
-    
+you can clone a remote repository by using the command below, this will probably be how most tasks
+will be gotten (for employees) so we clone the directory and work on our own tasks
+   
+    $ git clone <url> <where to clone> (e.g $ git clone https://github.com/Corey/remote_repo.git .)
+    $ git clone ../remote_repo.git .
+    the "." refers to this current directory
+
+To view information about the remote repository we use the following commands
+
+    $ git remote -v (shows information about repository)
+    $ git branch -a (showns information about the branch)
+
+To keep an online backup of your code, we can upload them to github. see the command below
+
     $ git remote shows all the active repositories
         to add your own repository, go to github and copy the repository address like below
 
@@ -80,9 +107,38 @@ Now that we have created a master repisotory we can add files, with the command:
         repository where we publish/upload our code to a specific git repository. This repository 
         is created on github and we can get the necessary address/path from there.
 
-    $ git push -u origin master This allows to push our code to the master repository on our
-        github.
+After we have completed our task for/with the code, we will want to push it to the central 
+repository, especiially in cases where there are multiple people working on the same code, and 
+they have been pushing code to that repository we want to pull all the changes in code from the
+the repository before we add our own changes. find below commands for pull and push
 
+    $ git pull -u origin master
+    $ git pull origin master
+
+    $ git push -u origin master 
+    $ git push origin master
+
+This allows to push our code to the master repository on our github. here the "-u" means that, we 
+want git to associate the local branch/master with the remote branch/master. this way we dont have to 
+include "-u" in future push requests, we can just say push origin master
+
+If we want to merge a branch, its advisable to create a pull request from the master branch just to 
+make sure that we have the most updated version of the code, before we initialize the merge. this can be
+done with the command below
+
+If we want to merge a local branch to the master branch we use the command
     
+    $ git merge <branch name> 
 
+If we want to see the merged files we use the command
 
+    $ git branch --merged
+    
+After merging the local branch to the master, we can delete the local branch as it is no longer useful
+to us. this can be achieved with the following command
+
+    $ git branch -d "branch name" (in this case -d = delete)
+    
+We can also delete the branch from the remote repository, this is achieved with the input below
+ 
+    $ git push origin --delete "branch name" 
