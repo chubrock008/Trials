@@ -1,0 +1,33 @@
+
+
+Check the current working directory
+    $ pwd --> (This generates the current path we are on)
+
+Check the files and directories in your working directory
+    $ ls (shows all vissible files & directories)
+    $ ls -la (shows both visible & hidden files & rectories)
+
+Create a greenfox directory & 
+    $ mkdir greenfox
+
+Change into the greenfox directory
+    $ cd greenfox
+    $ cd .. (this takes you back one dirctory/path/step)
+
+Change owner of a file
+    $ chown <user> <new root>
+
+Create an empty index.html file
+    $ touch index.html
+
+Copy & Delete a file
+    $ rm filename.extension (e.g rm index.html)
+
+Delete a dirctory
+    $ rm -r directory name (e.g rm -r greenfox)
+
+Copy a file
+    $ cp filename.ext directory (e.g cp index.html Coding )
+
+Copy a directory
+    $ cp directory-name-1 directory-name-2 (e.g cp -r greenfox Coding)

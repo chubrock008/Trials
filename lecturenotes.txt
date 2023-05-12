@@ -142,3 +142,30 @@ to us. this can be achieved with the following command
 We can also delete the branch from the remote repository, this is achieved with the input below
  
     $ git push origin --delete "branch name" 
+
+We can also fork a repo (repository), this is similar to cloning a repo but from my understanding,
+this is when you copy an entire repo from a user account to another user account. e.g i can fork 
+the entire biffy-sylabus repo from greenfox github account to my own github account. this way i will
+have the entire content of the repo and its entire history. to this regard, i dont have to worry 
+about changes i make on the files in that repo as it doesnt affect the original core one. there are
+two ways to fork a repo and they are as follows;
+
+    go to the actual file/code/branch to want to fork and click on it, in the right corner there will
+    be a pencil icon and when you hover over it, you will see it gives you the option to fork and edit
+    cos github knows you dont have the necessary permission. then we select where we want to fork the
+    repository
+
+    The second method is to click on the fork option which is located on the top right corner as well
+    but is located above the afromentioned option above, the symbol for this fork option is like 2 
+    branches connected to one/similar to wlan symbol. then we select where we want to fork the
+    repository
+When the fork is complete and we comlete the changes we are making, we can can chose to 
+"to save & commit to master (our local master in this case)" or "Create a new branch & start pull request" 
+after all this is done you can now create a pull request to the source repo, to have them merge the changes
+
+We can also do a pull request. What this means is that i want to add changes to the code in a repo
+(e.g on greenfox github account) but because i dont have permission to make changes on the repo, 
+someone with access will have to accept the chages, so we create a pull request for someone with 
+access to authenticate. As a rule of thumb, if i am sending something out its a push request, if i 
+am getting something in, its a pull request. Be aware however, that your acces/permission to the 
+repo in question will affect those terminologies.
