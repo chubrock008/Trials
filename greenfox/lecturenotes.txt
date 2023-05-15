@@ -1,0 +1,171 @@
+So this is a new note series for coding
+to create a new file using git bash we use the command 
+    $ touch 'name of file.extension'(e.g touch index.html)
+
+To create a git repository in a folder, 
+    we have to first, add the folder to our workspace, then open the 
+    folder in a our file explorer, right click, select the git bash 
+    option. this will open up the dialogue box. then we input the command
+    "$ git init" this will create a repository for your works here. FYI this 
+    folder will be hidden, so to see it, we might have to enable hidden files
+
+We also have to add our name and email address to the git repository. This is 
+done with the following command
+    $ git config --global user.name 'chubrock'
+    $ git config --global user.email 'forchuby@gmail.com'
+
+When we are stuck, we could ask git for help with the following command
+    $ git help <verb>
+    $ git <verb> --help
+
+We can see a list of all the files we have in the directory with the command;
+    $ ls will list all the vissible files in the directory
+    $ ls -la will list all files (both hidden and visible) files in the directory
+
+ If we want to stop trackinig a project all we have to do is delete the .git
+ directory, we can do this 2 ways by physically deleting the directory/folder
+ from file explorer or using the command below
+    $ rm -rf .git   
+
+Now that we have created a master repisotory we can add files, with the command:
+    $ git add index.html 'to add individual file'
+    
+    $ git status "gives us the status of the files added, that are waiting
+                  to be committed"
+
+There are multiple ways to remove files from the staging area, they are shown below
+    $ git rm --cached "file name" removes the git file from the commited branch.
+    $ git reset will remove all files from the stagging area
+    $ git reset log.txt will remove the particular file
+    
+    $ git add *.html will add all files with ".html" attached to them
+    $ git  add -A will add all untracked files to the staging area
+    $ git add "." will add all the files in the directory to the master
+   
+    $ git commit will commit all files in the staging area. when using Visual Studio
+        Code, a pop will appear on the editor. remove the '#' infront of the initial 
+        commit, save (i think) then close the window to approve commit. there's a 2nd 
+        method which will be shown below.
+   
+    $ git commit -m 'coment goes here' (e.g $ commit -m 'changed app.js'). the -m stands
+        for message hence we add the ''. this way we can track all the commits,
+        that is why it is important to leave good reference messages.
+    
+    $ git log shows all the commits that have been carried out in that particular directory
+
+If the command line editor is cluttered you can clear the screen by using the command below    
+    $ clear this removes everything on the bash dialogue box.
+    
+    $ touch ".gitignore" will create a ignore folder for git. this cant be created in 
+        file explorer as windows will think its a empty name file. so it has to be created 
+        on the bash command line interface.
+        All files added to this file/folder will not be committed. To add files to this 
+        directory all we do is input the name of the file, in the .gitignore directory 
+        on our editor. E.g (open .gitignore on the editor and type in log.txt and save).
+        all changes made to this file wont show up when checking status and wont be uploaded
+        to the master repository.
+        It is also possible to exclude entire directories as well, this can be done by
+        adding the directory to the ignore repository like this 
+        "/dir1" [r "/dir2"] in the .gitignore directory.
+
+We can create a branch in the master directory, this way if i am working with multiple people 
+i can still work on my own piece of the code without affecting what the others are doing. it is
+useful when i want to work on specific areas of the code or a specific feature, i can create a 
+branch and play around with before merging to the master. the command for creating branches are 
+as follows
+
+    $ git branch "chuby's branch"
+
+If we want to switch to the branch we want to work on. In this case it is chuby's branch, so the 
+above listed command will take us there and all changes we make there will be committed to that 
+branch as opposed to the master branch. 
+
+    $ git checkout chuby's branch, 
+
+    $ git checkout login will allow us to switch from the master branch to the local branch 
+        we want to edit, which will be the "login branch" in this instance. When we switch to 
+        the login branch we can edit changes locally that can be added later to the master
+
+you can clone a remote repository by using the command below, this will probably be how most tasks
+will be gotten (for employees) so we clone the directory and work on our own tasks
+   
+    $ git clone <url> <where to clone> (e.g $ git clone https://github.com/Corey/remote_repo.git .)
+    $ git clone ../remote_repo.git .
+    the "." refers to this current directory
+
+To view information about the remote repository we use the following commands
+
+    $ git remote -v (shows information about repository)
+    $ git branch -a (showns information about the branch)
+
+To keep an online backup of your code, we can upload them to github. see the command below
+
+    $ git remote shows all the active repositories
+        to add your own repository, go to github and copy the repository address like below
+
+    $ git remote add origin https://github.com/chubrock008/Collection1.git this allows us to a
+        repository where we publish/upload our code to a specific git repository. This repository 
+        is created on github and we can get the necessary address/path from there.
+
+After we have completed our task for/with the code, we will want to push it to the central 
+repository, especiially in cases where there are multiple people working on the same code, and 
+they have been pushing code to that repository we want to pull all the changes in code from the
+the repository before we add our own changes. find below commands for pull and push
+
+    $ git pull -u origin master
+    $ git pull origin master
+
+    $ git push -u origin master 
+    $ git push origin master
+
+This allows to push our code to the master repository on our github. here the "-u" means that, we 
+want git to associate the local branch/master with the remote branch/master. this way we dont have to 
+include "-u" in future push requests, we can just say push origin master
+
+If we want to merge a branch, its advisable to create a pull request from the master branch just to 
+make sure that we have the most updated version of the code, before we initialize the merge. this can be
+done with the command below
+
+If we want to merge a local branch to the master branch we use the command
+    
+    $ git merge <branch name> 
+
+If we want to see the merged files we use the command
+
+    $ git branch --merged
+    
+After merging the local branch to the master, we can delete the local branch as it is no longer useful
+to us. this can be achieved with the following command
+
+    $ git branch -d "branch name" (in this case -d = delete)
+    
+We can also delete the branch from the remote repository, this is achieved with the input below
+ 
+    $ git push origin --delete "branch name" 
+
+We can also fork a repo (repository), this is similar to cloning a repo but from my understanding,
+this is when you copy an entire repo from a user account to another user account. e.g i can fork 
+the entire biffy-sylabus repo from greenfox github account to my own github account. this way i will
+have the entire content of the repo and its entire history. to this regard, i dont have to worry 
+about changes i make on the files in that repo as it doesnt affect the original core one. there are
+two ways to fork a repo and they are as follows;
+
+    go to the actual file/code/branch to want to fork and click on it, in the right corner there will
+    be a pencil icon and when you hover over it, you will see it gives you the option to fork and edit
+    cos github knows you dont have the necessary permission. then we select where we want to fork the
+    repository
+
+    The second method is to click on the fork option which is located on the top right corner as well
+    but is located above the afromentioned option above, the symbol for this fork option is like 2 
+    branches connected to one/similar to wlan symbol. then we select where we want to fork the
+    repository
+When the fork is complete and we comlete the changes we are making, we can can chose to 
+"to save & commit to master (our local master in this case)" or "Create a new branch & start pull request" 
+after all this is done you can now create a pull request to the source repo, to have them merge the changes
+
+We can also do a pull request. What this means is that i want to add changes to the code in a repo
+(e.g on greenfox github account) but because i dont have permission to make changes on the repo, 
+someone with access will have to accept the chages, so we create a pull request for someone with 
+access to authenticate. As a rule of thumb, if i am sending something out its a push request, if i 
+am getting something in, its a pull request. Be aware however, that your acces/permission to the 
+repo in question will affect those terminologies.

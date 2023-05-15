@@ -1,0 +1,10 @@
+    0     0     0 content.txt
+    2    15    78 test1.txt
+    3    21    93 test2.txt
+    6    20   140 tasks.txt
+    6    47   234 test3.txt
+    8    64   312 test4.txt
+    9     9    55 names.txt
+   79   543  3459 workshop.txt
+  171  1657  9561 lecturenotes.txt
+  284  2376 13932 total
