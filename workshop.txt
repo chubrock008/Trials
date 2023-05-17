@@ -89,3 +89,10 @@ Grep help us search throug the lines of code and filter out the ones that match 
 
 "wc" this program/command helps us count lines, words and characters. All three can be done at once or we can specify what we want.
     $ wc test1.txt (will give an out put # of lines, # words, # characters). FYI space means new words
+
+TO FINISH
+    $ git add . (to add all my changes)
+    $ git commit -m "end of git"
+    $ git push -u origin master
+
+    check github
