@@ -44,3 +44,109 @@ Greet 3 of your classmates with this program in three separate lines like:
     helloOthers();
     export { helloOthers }
 ==================================================================================
+
+
+
+DAY3
+-------------
+// Write a program that prints a few details to the console about you
+// It should print each detail to a new line:
+//  - Your name
+//  - Your age
+//  - Your height in meters (as a decimal fraction)
+
+    'use strict';
+    function introduceYourself(): void {
+    console.log('Hello my name is Chuby');
+    console.log('I am 34');
+    console.log('I am 1.88');  
+    }
+    introduceYourself();
+    export { introduceYourself }
+===============================================================================
+
+// Create a program that prints a few operations on two numbers: 22 and 13
+// Print the result of 13 added to 22
+// Print the result of 13 substracted from 22
+// Print the result of 22 multiplied by 13
+// Print the result of 22 divided by 13 (as a decimal fraction)
+// Print the remainder of 22 divided by 13
+// attempt at question 5, but i was dsolving the wrong problem as i printed the decimal part of the result. 
+
+    'use strict';
+    let a = 22;
+    let b = 13;
+    function twoNumbers(): void {
+    console.log(b + a);
+    console.log(a - b);
+    console.log(a * b);
+    console.log(a / b);
+    console.log(5 % 2);
+    console.log((a/b) - Math.floor(a/b));
+    }
+    twoNumbers();
+    export { twoNumbers }
+======================================================================================
+
+// An average Green Fox attendee codes 6 hours daily
+// The semester is 17 weeks long
+// Print how many hours is spent with coding in a semester by an attendee,
+// if the attendee only codes on workdays.
+// Print the percentage of the coding hours in the semester if the average
+// work hours weekly is 52
+
+    'use strict';
+    function codingHours(): void {
+    let a = 6; // daily coding hours.
+    let b = 17; // semester lenght in weeks.
+    let c = (5*a); // weekly coding hours.
+    let d = 52; // updated working weeks.
+
+    console.log((b*c), "hours");
+    console.log((b*d),"hours");
+    }
+    codingHours();
+    export { codingHours }
+========================================================================================
+
+Store your favorite number in a variable (as a number)
+And print it like this: 'My favorite number is: 8'
+    'use strict';
+    let favoriteNumber: number = 8
+
+    function printMyFavoriteNumber(): void {
+        let b = String(favoriteNumber);
+        let c: string = "My favorite number is: ";
+        console.log(c+b);    
+    }
+    printMyFavoriteNumber();
+    export { printMyFavoriteNumber }
+=========================================================================================
+
+// Write your code here:
+// Swap the values of these variables without changing the following 2 lines of code:
+// swap(123, 526)
+
+"use strict";
+function swap(numberToSwap1: number, numberToSwap2: number): void {
+  
+  console.log(numberToSwap1);
+  console.log(numberToSwap2);
+}
+swap(526, 123);
+export { swap }
+=========================================================================================
+
+// Print the Body mass index (BMI) based on these values
+
+'use strict';
+
+function bmi(): void {
+  let massInKg: number = 81.2;
+  let heightInM: number = 1.78;
+  // Write your code here:
+    console.log(massInKg/heightInM);    
+}
+bmi();
+export { bmi }
+==========================================================================================

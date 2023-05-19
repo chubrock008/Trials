@@ -222,7 +222,8 @@ Common operators for js include the following;
     =: assignment       +: addition         -: Subtraction
     /: division         *: Multiplication   "": anything inside's a string
     NaN: not a number   
-    "+= x": equal to plus number (works for =,*,/)  
+    "+= x": equal to plus number (works for =,*,/) 
+    "%": This prints the remainder after a division. so after you divide what cant be divided further. 
        
     console.log("hello world"): Prints hello world on the console
     document.write("hello world"): Prints hello

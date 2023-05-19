@@ -8,9 +8,9 @@
 
 function helloOthers(): void {
   // Write your code here:
-  let a = "Hello, A!";
-  let b = "Hello, B!";
-  let c = "Hello, C!";
+  let a = "Hello, Esther!";
+  let b = "Hello, Mary!";
+  let c = "Hello, Joe!";
 
   console.log(a);
   console.log(b);
