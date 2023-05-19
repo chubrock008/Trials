@@ -94,18 +94,19 @@ will be gotten (for employees) so we clone the directory and work on our own tas
     the "." refers to this current directory
 
 To view information about the remote repository we use the following commands
-
     $ git remote -v (shows information about repository)
     $ git branch -a (showns information about the branch)
 
 To keep an online backup of your code, we can upload them to github. see the command below
 
-    $ git remote shows all the active repositories
-        to add your own repository, go to github and copy the repository address like below
+    $ git remote  (this shows the active repositories where code will be commited.) 
+    $ git remote rename OLDNAME NEWNAME (this will rename the repositiry)
+    
+to add your own repository, go to github and copy the repository address like below
 
-    $ git remote add origin https://github.com/chubrock008/Collection1.git this allows us to a
+    $ git remote add origin https://github.com/chubrock008/Collection1.git (this allows us to a
         repository where we publish/upload our code to a specific git repository. This repository 
-        is created on github and we can get the necessary address/path from there.
+        is created on github and we can get the necessary address/path from there.)
 
 After we have completed our task for/with the code, we will want to push it to the central 
 repository, especiially in cases where there are multiple people working on the same code, and 
@@ -169,3 +170,132 @@ someone with access will have to accept the chages, so we create a pull request 
 access to authenticate. As a rule of thumb, if i am sending something out its a push request, if i 
 am getting something in, its a pull request. Be aware however, that your acces/permission to the 
 repo in question will affect those terminologies.
+
+
+WEEK 4 BEGINING 
+-------------------------------------
+What is javascript? its a scripting language that is great at manipulating webpages but is kinda limited
+when compared to other programming languages. it can also be described as a client side language as everything
+is done on the client's browser as opposed to the backend/Server like (Ruby on Rails, PHP, ASP.NET). |Also,
+there's no relationship between Javascript and Java, they are 2 different programming languages.
+
+What is typrscript? its a collection of libraries for javascript!
+
+When running scripts it is essential to put the script command (e.g an "alert" <script> alert ("message");) on 
+the bottom of the body section this way, the content of the page will load before the popup alert. This way 
+you can see some info while the popup is displayed. This did not work for me as the page kept displaying a blank 
+page while the popup is displayed. if the popup message you want displayed is long (multiple lines), it is advisable 
+to add it to an external file so you dont clutter the code and if the same message is used in multiple locations, it 
+can be edited to once for the multiple use cases. P/S: after i added my message to an external source and the page loaded
+along with the popup message.
+    <script> alert("Hello World"); </script>
+    <script src="message.js"></script> (this is how we link the script. FYI you might have to put the path/url to get the right file)
+
+Also note that javascript is case sensitive. Also note that ";" signifies the end of a statement, this means we can list 
+multiple statements in one line of code but this will make your code ugly however. So its advisable to put one line per 
+statement, so its crucial to add the semicolon at the end of each argument. 
+To add one-line comments to your code just add "//"
+To add multi line comments we use /**/
+JS runs from top to bottom
+
+Variables are used to store information in JS. For example, we can store the cordinates of an image or customer name in a Variable.
+we can describe variables with the "var" command , pls dont start with a number;
+    var myvariablechuby1;
+    myvariablechuby1 = 1 (will now assign a value to that variable. if it's a string use " or ', dont forget ";" at the end) 
+    var myvar2 = "hello"; (same as above just combined into 1 line.)
+initialize variables with the keyword "var" and we can set them to a value in the same statement. try to have a specific naming convention.
+you can change variable type but it isnt recommended. we dont have to specify the type of variable. you can use special characters but dont 
+start with numbers.
+
+var vs let. "var" uses function scope. it can be changed with basic JS math functions. 
+    var y=1 (means "y" is a variable with the value of 1. could be a string as well e.g. "var y=hello")
+
+"let" uses block scope. 
+
+"const" helps improve efficieny & memory usage for the code, used for variables that are unchanging, what this means is that it cant be changed. 
+so if we have a 
+    "const y = 50;",  trying to change "y" will generate an error message. But if we have say 
+    "const y = {a: 100, b: 100};" we can change the values inside the "const y" with the command "y.a = 200". 
+    you can also add more to the const by using y.c=110; this will change y into (const y = {a:100, b:100, c:110})
+
+Common operators for js include the following;
+    =: assignment       +: addition         -: Subtraction
+    /: division         *: Multiplication   "": anything inside's a string
+    NaN: not a number   
+    "+= x": equal to plus number (works for =,*,/)  
+       
+    console.log("hello world"): Prints hello world on the console
+    document.write("hello world"): Prints hello
+
+Booleans are used to check conditions of certain scenarios 
+    var ilikemeat = true (you dont have to put "" cos its a Booleans)
+    <,>: "comparison indicators "generates true or false statement""
+    "==": is used to check if 2 values are equal"
+    "===" is used to check if the values and type (i.e integer or string) are equal/ the same.
+    "!=": it means not equal to 
+    document.write(chuby): type in this in the console will allow you to clear the website and
+    write out chuby on the page   
+
+if statements are used to check/add functionality to a statement/querry
+    var youlikemeat = true;
+    "if (true)" or "if (youlikemeat)" {"code block"} 
+    "if (true) {codeblock} else {Codeblock}": this tells the code to do 2 if 1 is false.
+
+else if" statements are used to go through multiple functions. so we can stack multiple
+statements for the code to run through. 
+    if (true) {{codeblock}; else if {my age > 20} {codeblock}; 
+    else if {...} {codeblock}; else {..}{codeblock};}
+
+&&: it is used to add an and to the statement. this is useful when we want two conditions
+to be fulfiled before the statement passes as true.
+    &&: means "and"
+    "||": it means "or"
+
+While statements are used to set conditions that must be met. its a loop and a limit must be 
+set or else program will keep running (i.e infinite loop) and cause pc to crash
+    while (condition) {codeblock} {incrementor}
+
+For statements used most frequently as its more pleasing to the eye.
+    for (initial/index variable; condition; incrementor) {codeblock}
+
+Break & Continue. is broken into 2, Break is used to break out of a loop. Continue is used in
+specific loops, so if certain conditions are met dont execute the other codeblock.
+    for (i=0; i<10; i++) {
+    if (i ==5 || i===3) {continue}}
+    console.log(i); if (i===7) {break;}
+    console.log("i am outta the loop")
+
+function functionname (variables) {codeblock}
+    function getAverage (a,b) {
+        var average = (a+b)/2;
+        console.log(average);
+    }
+    getAverage(7,12);
+==================================================================================
+
+    function getAverage (a,b) {
+        var average = (a+b)/2; (// local variable)
+        console.log(average);
+        return average;
+    }
+    var myResult = getAverage(7,12); //globala variable
+    console.log("the average is" + myResult);
+
+Variable scope determines where in the code a variable is visible and which part 
+of the code can use it. there are 2 types global and local. Global can be defined outside
+of a functionn(i.e i can call it up anywhere in the code). While a local variable is 
+defined inside of a function, so it cannot be called up outside that function.
+
+Strings are detonated with "" or ''. so we have to be careful when mixing them so we dont accidently 
+close a string to that effect we have to carefully utilize the quotations to avoid errors
+    var myString = 'I/'m a "fun" string';
+    console.log(myString);
+    the result will be 'I'm a "fun" string'
+in the course of searchiing a string, we find that what we our looking for isn't 
+included the console will return a message of
+    -1 which means that what we are looking for cant be found
+
+to run your code on the local terminal, use the command below;
+    npx ts-node "filename"
+
+

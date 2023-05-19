@@ -1,0 +1,12 @@
+The code below will give us an output for people who like or dislike meat. if they like meat,
+there will be a popup for meaty menu, if they dislike there's a popup for veggie menu.
+    
+    let youlikemeat = false;
+    if (youlikemeat) {
+        document.write("Here's  meaty menu"); 
+
+    } else {
+        document.write("Here's the veggie menu");
+        
+    }
+
