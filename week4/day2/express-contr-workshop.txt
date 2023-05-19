@@ -10,3 +10,37 @@ there will be a popup for meaty menu, if they dislike there's a popup for veggie
         
     }
 
+in the codeblock section if you input the following command
+    if() {console.log("hello Joe")}; it will printout hello Joe on the console.
+
+to run your code on the local terminal, use the command below;
+    "npx ts-node "filename""
+==================================================================================
+
+Code for greeting chubrock on console;
+
+    'use strict';
+    // Modify this program to greet you instead of the World!
+    function helloMe(): void {
+    console.log('Hello, Chubrock008!');
+    }
+    helloMe();
+    export { helloMe }
+==================================================================================
+
+Greet 3 of your classmates with this program in three separate lines like:
+
+    'use strict';
+    function helloOthers(): void {
+    // Write your code here:
+    let a = "Hello, A!";
+    let b = "Hello, B!";
+    let c = "Hello, C!";
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    }
+    helloOthers();
+    export { helloOthers }
+==================================================================================
