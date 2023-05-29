@@ -62,6 +62,17 @@ function conditionalVariableMutation(): void {
   // if time is more than 200
   // set output3 to "Time out"
   // otherwise set output3 to "Run Forest Run!"
+  
+  if (d/4===0 && time <=200) {
+    let output3: string = 'Check';
+    console.log(output3);    
+  } else if (time > 200) {
+    let output3: string = 'Time out';
+    console.log(output3);    
+  } else {
+    let output3: string = 'Run Forest Run';
+    console.log(output3);    
+  }
 
   console.log(output3);
 }

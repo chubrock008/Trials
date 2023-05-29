@@ -16,6 +16,33 @@ const size: number = 6;
 //
 export function drawDiagonal(size: number): void {
   // Write your code here
+  for (let i = 0; i < size; i++) {
+    let sides: string = '';
+        for (let j = 0; j < size; j++) {
+          sides += '';
+          
+          if (i===0 || i===size-1 ) {
+            sides += '%';                              
+          } 
+
+          else if ((i>0 && j<1) || (i>0 && j===size-1)) {
+            sides += '%';            
+          } 
+
+          else if (i===j && i>0) {
+            sides += '%';
+            
+          } else {
+            sides += ' ';            
+          }
+                
+
+        }
+        
+
+    console.log(sides);
+    
+  }
 }
 
 drawDiagonal(size)

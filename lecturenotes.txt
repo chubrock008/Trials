@@ -233,7 +233,9 @@ Booleans are used to check conditions of certain scenarios
     <,>: "comparison indicators "generates true or false statement""
     "==": is used to check if 2 values are equal"
     "===" is used to check if the values and type (i.e integer or string) are equal/ the same.
-    "!=": it means not equal to 
+    "!=": it means not equal to.
+    "Math.pow (7,3)": prints 7^3
+
     document.write(chuby): type in this in the console will allow you to clear the website and
     write out chuby on the page   
 
@@ -257,8 +259,9 @@ set or else program will keep running (i.e infinite loop) and cause pc to crash
     while (condition) {codeblock} {incrementor}
 
 For statements used most frequently as its more pleasing to the eye.
-    for (initial/index variable; condition; incrementor) {codeblock}
-
+    for (initial/index variable; condition; incrementor/afterthought) {codeblock}
+    for (let i: number = 0; i < 100; i++) {console.log(i); // Prints the numbers from 0 to 99
+        }
 Break & Continue. is broken into 2, Break is used to break out of a loop. Continue is used in
 specific loops, so if certain conditions are met dont execute the other codeblock.
     for (i=0; i<10; i++) {
@@ -298,5 +301,14 @@ included the console will return a message of
 
 to run your code on the local terminal, use the command below;
     npx ts-node "filename"
+
+"`" or the first number key on ENG keyboard, allows us to insert code within code. what
+this means is that we can insert code into a string to get our desired resut. see e.g below;
+    for (let i: number = 1; i <= 10; i++)  {
+      const result = i*n;
+      console.log(`${i} * ${n} = ${result}`);  //prints output 1*15 = 15;   
+    } 
+
+
 
 

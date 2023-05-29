@@ -327,3 +327,415 @@ secondsInADay();
 export {secondsInADay }
 =========================================================
 
+'use strict';
+function conditionalVariableMutation(): void {
+  let a: number = 24;
+  let output1: number = 0;
+  // if a is even increment output1 by one
+  if (a%2===0) {
+    console.log(output1++);    
+  }
+
+  let b: number = 13;
+  let output2: string = '';
+  // if b is between 10 and 20 set output2 to "Sweet!"
+  // if less than 10 set output2 to "Less!",
+  // if more than 20 set output2 to "More!"
+
+  if (b>10 && b<20) {
+    let output2='Sweet'; 
+    console.log(output2)
+    
+  } else if (b<10) {
+    let output2='Less';
+    console.log(output2);
+    
+  } if (b>20) {
+    let output2='More';
+    console.log(output2);    
+  }
+  console.log(output2);
+
+  let c: number = 123;
+  let credits: number = 100;
+  let isBonus: boolean = false;
+  // if credits are at least 50,
+  // and is_bonus is false decrement c by 2
+  // if credits are smaller than 50,
+  // and is_bonus is false decrement c by 1
+  // if is_bonus is true c should remain the same
+
+  if (credits >= 50 && !isBonus) {
+    console.log(c-2);    
+    
+  } else if (credits < 50 && !isBonus) {
+    console.log(c--);    
+  }  if (credits <50 && isBonus) {
+    console.log(c);
+  }
+  console.log(c);
+
+  let d: number =  8;
+  let time: number = 120;
+  let output3: string = '';
+  // if d is dividable by 4
+  // and time is not more than 200
+  // set output3 to "Check"
+  // if time is more than 200
+  // set output3 to "Time out"
+  // otherwise set output3 to "Run Forest Run!"
+  
+  if (d/4===0 && time <=200) {
+    let output3: string = 'Check';
+    console.log(output3);    
+  } else if (time > 200) {
+    let output3: string = 'Time out';
+    console.log(output3);    
+  } else {
+    let output3: string = 'Run Forest Run';
+    console.log(output3);    
+  }
+  console.log(output3);
+}
+conditionalVariableMutation();
+export { conditionalVariableMutation }
+=========================================================
+
+'use strict';
+
+// Create a program that writes this line 100 times:
+// "I won't cheat on the exam!"
+
+function iWontCheatOnTheExams(): void {
+  // Write your code here:
+  for (let i: number = 0; i < 101; i++) {
+    console.log("I won't cheat on the exam!"); // Prints the numbers from 0 to 99
+  }
+}
+iWontCheatOnTheExams();
+export { iWontCheatOnTheExams }
+============================================================
+
+// Create a program that prints all the even numbers between 0 and 500 (both included)
+// Each number should be on a new line
+"use strict";
+function printEven(): void {
+  // Write your code here:
+  for (let even: number = 0; even <= 500; even++) 
+    if (even%2===0) {
+      console.log(even);      
+    } 
+}
+printEven();
+export { printEven }
+============================================================
+
+// Create a program which prints the multiplication table
+// for a specified number
+//
+// Example:
+// The number 15 should print:
+// 1 * 15 = 15
+// 2 * 15 = 30
+// 3*15 to 8*15
+// 9 * 15 = 135
+// 10 * 15 = 150
+
+export function multiplicationTable(n: number):void {
+  // write your code here for Gradescope testing  
+  for (let i: number = 1; i <= 10; i++)    
+    {
+      const result = i*n;
+      console.log(`${i} * ${n} = ${result}`);   //prints output 1*15 = 15;   
+    } 
+}
+multiplicationTable(15);
+====================================================================
+
+// Write a program that calculates the sum and the average from 1 to a given number
+// Example input: 5
+// Example output: Sum: 15, Average: 3
+'use strict';
+function parametricAverage(numbers: number): void {
+  // Write your code here:
+  for (let index: number = 1; index <= numbers; index++) {
+    const sum = (index*(index+1))/2;
+    const average = ((index+1)/2);    
+         
+    if (index===numbers) {
+      console.log(`Sum: ${sum}, Average: ${average}`);      
+    }       
+  }
+}
+parametricAverage(5);
+export { parametricAverage }
+==============================================================================================
+
+// Write a program that prints the numbers from 1 to 100 to separate lines
+// but for multiples of three print “Fizz” instead of the number
+// and for the multiples of five print “Buzz”
+// For numbers which are multiples of both three and five print “FizzBuzz”
+
+'use strict';
+export function fizzBuzz() {
+  // write your code here for Gradescope testing
+  for (let index = 1; index <= 100; index++) {
+    //const element = array[index];
+    if (index%3 === 0 && index%5 === 0 ) {
+      console.log("FizzBuzz");      
+    }
+    else if (index%3 === 0 ) {
+      console.log("Fizz");      
+    }
+    else if (index%5 === 0) {
+      console.log("Buzz");      
+    }    
+    else {
+      console.log(index);      
+    }
+  }
+}
+fizzBuzz()
+===================================================================================
+
+// Write a program that draws a triangle of the specified height
+// Example output when height is 4:
+
+// *
+// **
+// ***
+// ****
+
+'use strict';
+// change the number here to test out different sizes
+const height: number = 4;
+
+/**
+ * dont really know how i solved this, all i know is that i copied most
+ * of the code from the web and i edited.
+ * there are two for statements and my guess is that one is for making the
+ * outer shell (i.e 'the height'). the 2nd 'for loop' was used to generate 
+ * the stars in the shell. FYI this is a guess, will check it out with more 
+ * iterations.
+ */
+export function drawTriangle(height: number): void {
+  for (let index = 1; index <= height; index++) { //for the shell(height);
+          let result: string = '';
+          for (let j = 1; j <= index; j++) { //for the contents of the shell;
+            result = result + '*'; //result += ' *' (better way to write);                                  
+          }
+    console.log(result);    
+  }
+}
+drawTriangle(height)
+=====================================================================================
+
+// Write a program that draws a pyramid of the specified height
+//
+// Example output when height is 4:
+//
+//    *
+//   ***
+//  *****
+// *******
+
+The trick to solving this is to know the current sequence to input commands.
+the first step is to make a for loop to print the height, but the result shouldnt 
+appear at the origin, so we make another for loop inside the first loop, then we
+write the condition for printing the result after 3 empty spaces. after this 
+is done, we go back under the codeblock section of the first for loop, then input the
+command to print the number of stars on the next lines.
+
+'use strict';
+
+// change the number here to test out different sizes
+const height: number = 4;
+
+export function drawPyramid(height: number): void {
+  // Write your code here
+  for (let i = 0; i < height; i++) {
+    let row: string = '';
+    
+    for (let j = 0; j < height - (i+1); j++) {
+      row += ' '; // row = row + ' ';
+    }
+
+    for (let k = 0; k < (2*i) + 1; k++) {
+      row += '*'; // row = row + '*';      
+    }    
+    console.log(row);    
+  }
+}
+drawPyramid(height)
+==========================================================================================
+
+'use strict';
+
+// change the number here to test out different sizes
+const height: number = 4;
+
+// Write a program that draws a diamond of the specified height
+//
+// Example output when height is 4:
+//
+//    *
+//   ***
+//  *****
+// *******
+//  *****
+//   ***
+//    *
+//
+// Note: the height of the diamond is taken from its base
+// (where it is the widest) to the top.
+// The total number of lines produced is 2 * height - 1
+
+export function drawDiamond(height: number): void {
+  // Write your code here
+  for (let i = 0; i < height; i++) {
+    let row: string = '';
+      for (let j = 0; j < height -i -1; j++) {
+        row += ' ';        
+      }        
+    for (let k = 0; k < (2*i) +1; k++) {
+      row += '*';      
+    }
+    console.log(row);    
+  }
+
+  for (let i = 1; i < height; i++) {
+    let row: string = '';        
+        for (let j = 0; j < i; j++) {
+          row += ' ';          
+        }    
+    for (let k = 0; k < (2 *height) - (2*i + 1); k++) {
+      row += '*';      
+    }
+
+    console.log(row);     
+  }
+}
+drawDiamond(height)
+======================================================================================================
+
+'use strict';
+
+// change the number here to test out different sizes
+const size: number = 6
+
+// Write a program that draws a square of the specified size
+//
+// Example output when size is 6:
+//
+// %%%%%%
+// %    %
+// %    %
+// %    %
+// %    %
+// %%%%%%
+//
+export function drawSquare(size: number): void {
+  // Write your code here
+  for (let i = 0; i < size; i++) {
+    let sides: string = '';
+        for (let j = 0; j < size; j++) {
+          sides += '';
+          
+          if (i===0 || i===size-1 ) {
+            sides += '%';
+                              
+          } else if ((i>0 && j<1) || (i>0 && j===size-1)) {
+            sides += '%';
+            
+          } else {
+            sides += ' ';            
+          }            
+        }
+    console.log(sides);    
+  }
+}
+drawSquare(size)
+==========================================================================================
+
+'use strict';
+
+// change the number here to test out different sizes
+const size: number = 6;
+
+// Write a program that draws a square with the main diagonal of the specified size
+//
+// Example output when size is 6:
+//
+// %%%%%%
+// %%   %
+// % %  %
+// %  % %
+// %   %%
+// %%%%%%
+//
+export function drawDiagonal(size: number): void {
+  // Write your code here
+  for (let i = 0; i < size; i++) {
+    let sides: string = '';
+        for (let j = 0; j < size; j++) {
+          sides += '';
+          
+          if (i===0 || i===size-1 ) {
+            sides += '%';                              
+          } 
+
+          else if ((i>0 && j<1) || (i>0 && j===size-1)) {
+            sides += '%';            
+          } 
+
+          else if (i===j && i>0) {
+            sides += '%';
+            
+          } else {
+            sides += ' ';            
+          }
+        }
+    console.log(sides);   
+  }
+}
+drawDiagonal(size)
+====================================================================================================
+
+'use strict';
+
+// change the number here to test out different sizes
+const size: number = 8;
+
+// Write a program that draws a chess table of the specified size
+//
+// Example output when size is 8:
+//
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
+//
+export function drawChessTable(size: number): void {
+  // Write your code here
+  for (let i = 0; i < size; i++) {
+    let result: string = '';
+
+        for (let j = 0; j < size/2; j++) {
+          result += ' ';
+          
+          if (i%2 !=0) {
+            result += ' ' + '%';
+            
+          } else {
+            result += '%'            
+          }          
+        }
+    console.log(result);    
+  }
+}
+drawChessTable(size)
+===================================================================================================================

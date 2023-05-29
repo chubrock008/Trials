@@ -19,12 +19,21 @@ export function drawSquare(size: number): void {
   for (let i = 0; i < size; i++) {
     let sides: string = '';
         for (let j = 0; j < size; j++) {
-          sides += '%';
+          sides += '';
           
+          if (i===0 || i===size-1 ) {
+            sides += '%';
+                              
+          } else if ((i>0 && j<1) || (i>0 && j===size-1)) {
+            sides += '%';
+            
+          } else {
+            sides += ' ';
+            
+          }            
         }
 
     console.log(sides);
-    
     
   }
 }

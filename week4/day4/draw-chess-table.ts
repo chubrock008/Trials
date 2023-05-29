@@ -18,6 +18,25 @@ const size: number = 8;
 //
 export function drawChessTable(size: number): void {
   // Write your code here
+  for (let i = 0; i < size; i++) {
+    let result: string = '';
+
+        for (let j = 0; j < size/2; j++) {
+          result += ' ';
+          
+          if (i%2 !=0) {
+            result += ' ' + '%';
+            
+          } else {
+            result += '%'
+            
+          }          
+        }
+
+    console.log(result);
+    
+    
+  }
 }
 
 drawChessTable(size)
