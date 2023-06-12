@@ -1,0 +1,212 @@
+"use strict";
+
+// - Create a variable named `numbers`
+//   with the following content: `[1, 3, 5, 7]`
+// - Print the third element of `numbers`
+
+function third(): void {
+  // Write your code here:
+  let numbers:number[] = [1, 3, 5, 7];
+
+  console.log(numbers[2]);  
+}
+third();
+export { third };
+//=========================================================
+
+
+"use strict";
+
+// - Create an array variable named `firstArrayOfNumbers`
+//   with the following content: `[1, 2, 3]`
+// - Create an array variable named `secondArrayOfNumbers`
+//   with the following content: `[4, 5]`
+// - Print "secondArrayOfNumbers is longer" if `secondArrayOfNumbers`
+//   has more elements than `firstArrayOfNumbers`
+// - Otherwise print: "firstArrayOfNumbers is the longer one"
+
+function compareLength(): void {
+  // Write your code here:
+  let firstArrayOfNumbers = [1, 2, 3];
+  let secondArrayOfNumbers = [4, 5];
+
+  if (firstArrayOfNumbers.length < secondArrayOfNumbers.length) {
+    
+    console.log('secondArrayOfNumbers is longer');    
+    
+  } else {
+    console.log('firstArrayOfNumbers is the longer one');    
+    
+  }
+}
+compareLength();
+export { compareLength };
+//============================================================
+
+"use strict";
+// - Create an array variable named `numbers`
+//   with the following content: `[54, 23, 66, 12]`
+// - Print the sum of the second and the third element
+
+function sumElements(): void {
+  // Write your code here:
+  let numbers: number[] = [54, 23, 66, 12]
+  let sumElements = numbers[1] + numbers[2];
+
+  console.log(sumElements);  
+}
+sumElements();
+export { sumElements };
+//==============================================================
+
+"use strict";
+
+// - Create an array variable named `orders`
+//   with the following content: `["first", "second", "third"]`
+// - Swap the first and the third element of `orders` programmatically
+// - Print the swapped array into the console:
+//   [third, second, first]
+
+function swapElements(): void {
+  // Write your code here:
+  let orders: any[] = ["first", "second", "third"];
+  [orders[0], orders[2]] = [orders[2], orders[0]];
+
+  console.log(orders);  
+}
+swapElements();
+export { swapElements };
+//=====================================================================
+
+"use strict";
+// - Create a variable named `numbers` with the following content: `[4, 5, 6, 7]`
+// - Log each the element of `numbers` to the console in separate lines*
+//   * hint: use a loop, console.log(numbers) won't cut it
+// - bonus for using the correct built in array method
+
+function printAll(): void {
+  // Write your code here:
+  let numbers: number[] = [4, 5, 6, 7];
+
+  numbers.forEach(element => {
+    console.log(element);    
+  });
+}
+printAll();
+export { printAll };
+//=============================================================================
+
+"use strict";
+// - Create an array variable named `numbers`
+//   with the following content: `[1, 2, 3, 8, 5, 6]`
+// - Change the value of the fourth element (8) to 4
+// - Print the fourth element
+
+function changeElement(): void {
+  // Write your code here:
+  let numbers: number[] = [1, 2, 3, 8, 5, 6]
+
+  numbers[3] = 4;
+  console.log(numbers[3]);  
+}
+changeElement();
+export { changeElement };
+//======================================================================
+
+"use strict";
+// - Create an array variable named `drinks` with the following content:
+//   `['Gin', 'Whiskey', 'Wine', 'Beer']`
+// - Double all the strings in the array, and print the result.
+// - Use a built in array method instead of a loop
+// - It should print: ['GinGin', 'WhiskeyWhiskey', 'WineWine', 'BeerBeer']`
+
+function doubleItems(): void {
+  // Write your code here:
+  let drinks:string [] = ['Gin', 'Whiskey', 'Wine', 'Beer'];
+
+  let map1 = drinks.map(x => x+x);
+    console.log(map1);
+}
+doubleItems();
+export { doubleItems };
+//====================================================================================================
+
+// https://www.geeksforgeeks.org/java-program-to-write-an-array-of-strings-to-the-output-console/
+// https://www.tutorialspoint.com/typescript/typescript_multi_dimensional_arrays.htm
+// https://www.w3schools.com/java/java_arrays_multi.asp#:~:text=A%20multidimensional%20array%20is%20an,table%20with%20rows%20and%20columns.
+"use strict";
+// -  Create a two dimensional list (of strings)
+//    which can contain the different shades of specified colors
+// -  In `colors[0]` store the shades of green:
+//    `"lime", "forest green", "olive", "pale green", "spring green"`
+// -  In `colors[1]` store the shades of red:
+//    `"orange red", "red", "tomato"`
+// -  In `colors[2]` store the shades of pink:
+//    `"orchid", "violet", "pink", "hot pink"`
+// - Print the colors in the following format:
+//
+//   lime, forest green, oline, pale green, spring green
+//   orange red, red, tomato
+//   orchid, violet, pink, hot pink
+function colors(): void {
+  // Write your code here:
+  let a:string [] = ["lime", "forest green", "olive", "pale green", "spring green"];
+  let b:string [] = ["orange red", "red", "tomato"];
+  let c:string [] = ["orchid", "violet", "pink", "hot pink"];  
+  
+  let colors:string [] []  =[];
+  
+  colors.push(a)
+  colors.push(b)
+  colors.push(c)
+  //console.log(colors); //this produces the colors total array;
+  //console.log(color[0]); //this prints content of array at index 0;
+
+    for (let i = 0; i < colors.length; i++) {        
+        console.log(colors[i]+ ' *');  // the addition of the paranthesis converted the output to a string. the function below does the same but in a better way; 
+
+        console.log(colors[i].toString());              
+    }    
+}
+colors();
+export { colors };
+//==================================================================
+
+"use strict";
+
+// - Create an array variable named `numbers`
+//   with the following content: `[3, 4, 5, 6, 7]`
+// - Print the sum of the elements of `numbers`
+
+function sumAll(): void {
+  // Write your code here:
+  let numbers: number [] = [3, 4, 5, 6, 7];
+
+  let sum: number = 0;
+
+/**
+ * for (let i = 0; i<numbers.length; i++) {
+
+    sum += numbers[i]; // sum = sum + numbers[i]
+    
+}
+ */
+
+numbers.forEach((number) => {
+    sum += number
+})
+
+
+console.log(sum);
+
+}
+
+sumAll();
+
+export { sumAll };
+
+
+
+
+
+
