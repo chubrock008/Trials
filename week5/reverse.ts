@@ -25,3 +25,51 @@ export { reverse };
 
 
 
+
+for (let i = 0; i < 1; i++) {
+
+  let array: number [] = [3,4,5,6,7];
+
+  for (let j = array.length; j >= 0; j--) {
+
+    let myResult = new Array(array.length);
+    
+    
+
+  }
+
+  console.log(myResult);
+  
+}
+
+
+/**
+ * let numbers1: number [] = [3,4,5,6,7];
+  
+    let map1 = numbers1.map(x => x);
+    
+    //console.log(map1);
+
+    for (let x = map1.length; x>=0; x--) {
+
+        console.log(map1[x]);        
+
+    }
+ */
+
+
+
+
+  /**
+   * function reverseArray (arr) {
+    var newArr = [];
+    for (var i = 0, j = arr.length - 1; i < arr.length; i++, j--) {      
+        newArr[i] = arr[j];
+    }   
+    return newArr;
+}
+console.log(reverseArray(["A", "B", "C", "D", "E", "F"]));
+   */
+
+
+//for (let i = 0; j = map1.length; i < 1; i++, j--) {}

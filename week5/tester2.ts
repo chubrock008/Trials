@@ -15,32 +15,25 @@ const size: number = 4;
 
 
 
+for (let i =0; i<size; i++) {
+
+    // let array1:number[][] = [];    
+    let array1 = new Array (size);
+
+    for (let j = 0; j < size; j++) {
+
+        if (i !== j) {
+            array1[j] = 0;
+        } else {
+            array1[j] = 1;
+        }
+    }       
+    console.log(array1);    
+   
+}
 
 
-export function createMatrix(size: number): number[][] {
-    // write your code to create an n×n matrix
-    // of the given size here
-    
-    for (let i =0; i<size; i++) {
-        let array1 = new Array (size);
-    
-        for (let j = 0; j < size; j++) {
-    
-            if (i !== j) {
-                array1[j] = 0;
-            } else {
-                array1[j] = 1;
-            }
-        }       
-        return array1;  
-    }  
-     
-  }
-  
-  export function printMatrix(matrix: number[][]): void {
-    // write your code to print the given matrix
-    // into the (standard) output here
-  }
+
 
 
 

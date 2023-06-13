@@ -309,6 +309,122 @@ this means is that we can insert code into a string to get our desired resut. se
       console.log(`${i} * ${n} = ${result}`);  //prints output 1*15 = 15;   
     } 
 
+slicing strings can be achieved with the command below (let str:string = 'Hello world')
+
+    str.slice(2,9);  //this will cut the string at index "2 & 9" printing "llo, wo"
+    str.slice(2);   //this will print from index '2 untill the end' printing "llo, world"
+
+Spliting strings allows us to split the strings into different pockets and place them in 
+different arrays. example; "let tags = "meat, ham, salami, pork, beef, chicken";
+
+    let tagsArray = tags.split(",")  //this will split the string at everypoint there's a comma
+                                     and place it in different array pockets like below
+    
+    tagsArray will now be ['meat', 'ham', 'salami', 'pork', 'beef', 'chicken']
 
 
+WEEK 5 BEGINING
+-------------------
+Arrays are list of values seperated by commas, embeded in an enclosed in a square brackets. the
+orders in the array is critical 
+
+    (e.g var num =[5,3,9,-2, 8] with '5' being index 0 & 3 being index 1) and so on;
+
+
+when coding if we dont usually work with the whole array, but if we say 'num[2]' it means we are calling '-2' from
+the array, cos it is the value with 'index 2'.
+
+Anything can be added to an array (objects, numbers, strings, properties, etc). to find the lenght 
+of an array we can use the command below for an array called 'let words =['rainbow','heart','purple','ginseng','']'
+
+    console.log (words.lenght) //which equals 5 in our example;
+
+    let strArr1: string[] = ['Hello', 'world'];   //creates an array with the listed contents;
+    let strArr2: Array<string> = ['Hello', 'world'];   // another syntax for creating arrays like above
+    
+    let myArray = new array (5); // this will create an array with 5 pockets
+    let myArray2 = [];   //
+    let anyArr: any[] = ['Hello', 10, true];   // this allows the array to contain any combination of data
+
+A tupple is a special type of array that lets you specify what type the array can carry
+    let myTupple: [string, number]  // this allows only numbers and strings to the array;
+
+"-1" is used to denote the abscence of an element, when using the "index of ()" method 
+
+    var arr = ['apple','orange','pear'];
+    console.log("found:", arr.indexOf("orange") != -1); // means that we want to know if 'orange' is not absent;
+
+SPLICE; this method changes the array by modyfying the content of the array. this is achieved by adding 
+or removing/replacing of the existing items. find syntax below;
+
+    array.splice(index, deleteCount, item1, item2, item3, ....)
+
+ForEach; this method executes a provided function once for each element in the array. see syntax below;
+
+    arrayName.forEach(element => { });
+
+we use the 'callbackfn' when the array has indexes with assigned values. it is not invoked for empty slots 
+in the 'sparse arrays'. a sparse array is an array in which most of the elements have the same 
+value (the default is 0 or null)
+
+"MAP"; this method creates a new array populated with results of calling a provided function on every 
+element in the calling array. see syntax below
+
+    map1 = arrayName.map(x => x);
+    console.log(map1);
+    arrayName.map((x) => x**2); // means x^2 (== x squared);
+
+FILTER; this method creates a shallow copy of a portion of a given array, filtered down to the elements
+described by the function.
+
+    function isBigEnough(value) {
+        return value >= 7;
+    }
+    let filtered = [6, 7, 8, 9].filter(isBigEnough);
+    console.log(filtered);
+
+"SOME USEFUL NOTES"
+----------------------
+~ new Array(i); this creates a new array with lenght i. so we could use this method like this; let testArray = new Array (5).
+~ arrayName.push(); this adds a new element to the array with the content in the brackets
+~ arrayName[i] = x; this adds a new element x to the array at index i.
+~ [orders[0], orders[2]] = [orders[2], orders[0]]; swaps the element content at the stated index
+~ i++; i++ will increment the value of i, but return the original value that i held before being incremented.
+~ ++i; ++i will increment the value of i, and then return the incremented value.
+
+~ console.log(colors[i]+ ' '); i found that adding '' to an array element like earlier, will result in the array being printed without the square brackets.
+
+~ reverse(); we use this syntax to reverse array elements. this can be achieved the following way.
+    let arrayName: number [] = [1,2,3,4]
+    arrayName.reverse(); this will result in the output [4,3,2,1].
+
+
+FUNCTIONS; these are the basis for writing code, so when we have multiple lines of code, we have to group them in chunks and this is where the function helps us. see the syntax below;
+    function 'functionName' '(variables)' {
+        codeblock
+    }
+    functionName(variables); //(this is where we call the function)
+we can also use the result of a function to compute more complex code, see syntax below
+    function getAvg (a,b) {
+        let avg = (a+b)/2;
+        console.log(avg);
+        return avg;
+    }
+    let myResult = getAvg(5,6);
+    console.log('the average is ' + myResult);
+
+normal function statement is a standalone function with a name, see syntax
+    function sayHi() {}
+        sayHi();
+
+function expression, is when you make a variable equal to a function. there's also no need for the function to have a name, this means its an anonymous function. see syntax below
+    let sayHi = function () {}
+        sayBye();
+Optional parmameters;  allows us to state what type the inout parameter will be.
+
+Rest Parameters; these dont restrict the number of parameters that can pass through a function. they are declared by adding three periods as a prefix. see syntax below;
+    function addNumbers(...nums:number[]) { codeblock }
+
+Default Parameters; functions can also be assigned default parameters i.e the value is explicitedly stated. it is important to note a parameter cant be declared optional & default at the same time. see syntax below;
+    function function_name(param1[:type],param2[:type] = default_value) {   codeblock    }
 
