@@ -25,6 +25,32 @@ export { reverse };
 
 
 
+function reverse1(): void {
+  // Write your code here:
+
+  let numbers: number [] = [3,4,5,6,7];
+  for (let i = 0; i < 1; i++ ) {
+
+    let result = new Array (numbers.length);
+
+    let result2 = numbers.map(x => x);
+
+    // map1 = arrayName.map(x => x);
+    
+    console.log(result);
+    console.log(result2);   
+     
+  }
+
+
+}
+
+reverse1();
+
+export { reverse1 };
+
+
+
 
 for (let i = 0; i < 1; i++) {
 
@@ -33,12 +59,13 @@ for (let i = 0; i < 1; i++) {
   for (let j = array.length; j >= 0; j--) {
 
     let myResult = new Array(array.length);
-    
-    
+
+    //console.log(myResult);   
 
   }
 
-  console.log(myResult);
+  console.log(array);
+  
   
 }
 
@@ -73,3 +100,17 @@ console.log(reverseArray(["A", "B", "C", "D", "E", "F"]));
 
 
 //for (let i = 0; j = map1.length; i < 1; i++, j--) {}
+
+
+/**
+ * function sumMatrix(matrix: number[][]) {
+  let sum = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    var currentRow = matrix[i];
+    for (let i = 0; i < currentRow.length; i++) {
+      sum += currentRow[i];
+    }
+  }
+  return sum;
+}
+ */
