@@ -209,4 +209,158 @@ export { sumAll };
 
 
 
+//==================================================================================================================
+
+//  FUNCTIONS
+//---------------
+'use strict';
+
+// - Create a number variable named `baseNumber` and
+//   assign it the value of `123`
+// - Create a function called `doubleNumber()` that doubles
+//   its number input parameter and returns that doubled value
+// - Don't forget to write `export` before the function
+// - Log the result of `doubleNumber(baseNumber)` to the console
+
+let baseNumber = 123;
+
+export function doubleNumber (number: number) {
+    
+    let result = number * 2;
+    
+    console.log(result);
+
+}
+doubleNumber(baseNumber)
+
+//=====================================================================================================================
+
+'use strict';
+
+// - Create variable named `nameToGreet` and assign the value `Green Fox` to it
+// - Create a function called `greet()` that greets its input parameter
+//     - It prints a greeting message e.g. `Greetings dear Green Fox`
+//     - Handle the case when no parameters are given by printing the
+//       `Please provide a name to greet` message
+// - Don't forget to write `export` before the function
+// - Greet `nameToGreet`
+
+let nameToGreet: string = 'Chubrock';
+
+export function greet(name?:string) {
+
+    let greetingMsg: string = 'Greetings dear ';
+
+    if (name == undefined) {
+
+        console.log('Please provide a name to greet');
+        
+    } else {
+        console.log(greetingMsg + name);
+    }
+    
+}
+
+greet(nameToGreet);
+//=====================================================================================================================
+
+'use strict';
+
+// - Create a string variable named `typo` and assign the value `Chinchill` to it
+// - Write a function called `appendAFunc()` that gets a string as an input,
+//   appends an 'a' character to its end and returns with a string
+// - Don't forget to write `export` before the function
+// - Print the result of `appendAFunc(typo)` to the console
+
+let typo: string = 'Chinchill';
+
+export function appendAFunc(input: string) {
+
+    console.log(input + 'a');    
+
+}
+
+appendAFunc(typo);
+
+//====================================================================================================================
+
+'use strict';
+
+// Write a function called `sum()` that returns the sum of numbers
+// from zero to the given parameter (as a number)
+// Don't forget to write `export` before the function
+//
+// Example: sum(5) should return 15, because 0 + 1 + 2 + 3 + 4 + 5 = 15
+
+export function sum(x:number) {
+    
+    let sum = 0;
+
+    for (let i = 0; i <= x; i++) {
+
+        sum += i;
+    }
+    console.log(sum);   
+}
+sum(5);
+//====================================================================================================================
+
+'use strict';
+
+// - Create a function called `calculateFactorial()`
+//   that returns the factorial of its input
+// - Don't forget to write `export` before the function
+//
+// - Example: calculateFactorial(5) should return 120, because 1 * 2 * 3 * 4 * 5 = 120
+
+export function calculateFactorial(x: number) {
+
+    let factorial = 1;
+
+    for (let i = 1;  i <= x; i++) {
+
+        factorial *= i; 
+    }
+
+    console.log(factorial);
+}
+
+calculateFactorial(5);
+
+//========================================================================================================================
+
+'use strict';
+
+// - Create a function called `printParams`
+//   which logs to the console the input parameters in separate lines
+//   (can have multiple number of arguments)
+// - Don't forget to write `export` before the function
+// 
+// Example calls:
+// - printParams('one', 'two');
+// - printParams(1, 2, 3);
+// - printParams();
+
+export function printParams(x: string, y: string) {
+    console.log(x,y);    
+}
+printParams('one', 'two')
+
+
+export function printParams1(a:number, b:number, c:number) {
+    console.log(a,b,c);   
+}
+printParams1(1, 2, 3)
+
+
+export function printParams2(a?:any) {
+    console.log(a);    
+}
+printParams2()
+
+//=================================================================================================================
+
+
+
+
 

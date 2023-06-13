@@ -391,6 +391,8 @@ described by the function.
 ~ [orders[0], orders[2]] = [orders[2], orders[0]]; swaps the element content at the stated index
 ~ i++; i++ will increment the value of i, but return the original value that i held before being incremented.
 ~ ++i; ++i will increment the value of i, and then return the incremented value.
+~ '?'/ name?; here the question mark '?' is used to detonate that the variable is optional. that means it doesnt have to be filled out. 
+~ '...' see triple period from line 474'ish for more info. used to overite/update  array contents depending on context.
 
 ~ console.log(colors[i]+ ' '); i found that adding '' to an array element like earlier, will result in the array being printed without the square brackets.
 
@@ -417,7 +419,7 @@ normal function statement is a standalone function with a name, see syntax
     function sayHi() {}
         sayHi();
 
-function expression, is when you make a variable equal to a function. there's also no need for the function to have a name, this means its an anonymous function. see syntax below
+function expression/ anonymous functions, this is when you make a variable equal to a function. there's also no need for the function to have a name, this means its an anonymous function i.e they are bound by no identifier. FYI anonymous functions can also have the variable included. see the syntax below
     let sayHi = function () {}
         sayBye();
 Optional parmameters;  allows us to state what type the inout parameter will be.
@@ -427,4 +429,67 @@ Rest Parameters; these dont restrict the number of parameters that can pass thro
 
 Default Parameters; functions can also be assigned default parameters i.e the value is explicitedly stated. it is important to note a parameter cant be declared optional & default at the same time. see syntax below;
     function function_name(param1[:type],param2[:type] = default_value) {   codeblock    }
+
+Function Constructor; there's an inbuilt function constructor in our editor. see the syntax below;
+    let res = new Function( [arguments] ) { ... }
+    see eg below;
+        var myFunction = new Function("a", "b", "return a * b"); 
+        var x = myFunction(4, 3); 
+        console.log(x);
+
+Recursion; this is a technique for iterating over an operation by allowing the function call on itself repeatedly, until it arrives at a certain result. see the example below;
+    function factorial(number) {
+    if (number <= 0) {         // termination case
+        return 1; 
+    } else {     
+        return (number * factorial(number - 1));     // function invokes itself
+   } 
+    }; 
+    console.log(factorial(6));
+
+Lamdba functions; these are also known as anonymous functions, they represent a concise mechanism to represent anonymous functions. there are 3 parts to a lambda functions anatomy and they are as follows;
+    Parameters; a function might optionally have parameters
+    The Fat Arrow/Lambda Notation (=>); also known as goes to operator
+    Statements; represents the functions instruction set
+
+syntax for lambda function can be seen below;
+    ( [param1, parma2,…param n] ) => statement; 
+
+    see e.g below
+    var foo = (x:number)=>10 + x 
+    console.log(foo(100)) 
+
+    vs regular anonymous function
+    var foo = function (x) { return 10 + x; };
+    console.log(foo(100));
+
+Block Scoping; this is when a variable is not visible/usable outside of the nearest containing block or for loop.
+
+Shadowing; this is when we introduce a new name in a more nested scope. it isn't good practise but in certain situations, it is unavoidable. see e.g below;
+    for (let i=0; i<array.lenght;i++) {
+        for (let i=0; i<currentRow.lenght) {}
+    }
+for more info on typescript functions visit //https://www.tutorialspoint.com/typescript/typescript_functions.htm.
+
+Triple Period(...); this has many uses that depends on where you place. if you have an object e.g let adrian = {.,..,...,....} and we want to use part of the object in a new object. we could use the content of adrian to fill up bill for e.g. \See e.g let bill = {...adrian,., ..}. so we have to reference adrian in the bill section of the object to have those elements present in bill and the rest of the elements filled out with what was provided in the 'bill' object. basically it avoids duplicates as it only fills out the new information provided by the coder.
+The process is slightly different for arrays as it expands or spreads the indexes and values, which might lead to duplications. see e.g below
+    const num1 = [1,2,3,4,5];
+    const num2 = [...num1,1,2,6,7,8]; // this will produce [1,2,3,4,5,1,2,6,7,8]. 
+    in a way, its a replacement for  Array.prototype.concat.
+
+Syntactic Variations; if data type is not specified, the default of any will be used
+
+Function Overloads; this allows the functions to operate differently on the basis of the input provided. see examples below;
+datat type of parameter: 
+    function disp (string): void
+    function disp(number): void
+
+the number of parameters
+    function disp(x:number,y:number):void;
+
+The sequence of parameters
+    function disp(n1:number,s1:string):void; 
+    function disp(s:string,n:number):void;
+example:
+    function disp (x:any, y?:any): void {}; // means that variable 'y' is optional.
 
