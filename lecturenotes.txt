@@ -317,8 +317,15 @@ slicing strings can be achieved with the command below (let str:string = 'Hello 
 Spliting strings allows us to split the strings into different pockets and place them in 
 different arrays. example; "let tags = "meat, ham, salami, pork, beef, chicken";
 
+    console.log(tags.split("")); // this will split the words in the array on a character 
+                                    basis and log them in the array
+
+    console.log(tags.split(" ")); // this will divide the string on a word by word basis 
+                                    and log them into the array.   
+
     let tagsArray = tags.split(",")  //this will split the string at everypoint there's a comma
                                      and place it in different array pockets like below
+                                     
     
     tagsArray will now be ['meat', 'ham', 'salami', 'pork', 'beef', 'chicken']
 
@@ -343,6 +350,7 @@ of an array we can use the command below for an array called 'let words =['rainb
     let strArr2: Array<string> = ['Hello', 'world'];   // another syntax for creating arrays like above
     
     let myArray = new array (5); // this will create an array with 5 pockets
+    let myArray = new Array of (5);   // this will create an array with one element called 5.
     let myArray2 = [];   //
     let anyArr: any[] = ['Hello', 10, true];   // this allows the array to contain any combination of data
 
@@ -354,6 +362,10 @@ A tupple is a special type of array that lets you specify what type the array ca
     var arr = ['apple','orange','pear'];
     console.log("found:", arr.indexOf("orange") != -1); // means that we want to know if 'orange' is not absent;
 
+UNSHIFT; this enables us to add one or more items to the index/starting point of the array. see syntax below;
+    
+    arrayName.unshift(item1, item2, ...); adds item1, item2 to the index of the array
+
 SPLICE; this method changes the array by modyfying the content of the array. this is achieved by adding 
 or removing/replacing of the existing items. find syntax below;
 
@@ -363,7 +375,7 @@ ForEach; this method executes a provided function once for each element in the a
 
     arrayName.forEach(element => { });
 
-we use the 'callbackfn' when the array has indexes with assigned values. it is not invoked for empty slots 
+CALLBACKFN; we use the 'callbackfn' when the array has indexes with assigned values. it is not invoked for empty slots 
 in the 'sparse arrays'. a sparse array is an array in which most of the elements have the same 
 value (the default is 0 or null)
 
@@ -393,6 +405,10 @@ described by the function.
 ~ ++i; ++i will increment the value of i, and then return the incremented value.
 ~ '?'/ name?; here the question mark '?' is used to detonate that the variable is optional. that means it doesnt have to be filled out. 
 ~ '...' see triple period from line 474'ish for more info. used to overite/update  array contents depending on context.
+~ '-1' means abscence of an element when using index of method.
+~ '${}'; this allows us to run localized code in the curly bracket. e.g. console.log(`${i} * ${n} = ${result}`); //prints output 1*15 = 15;when(i=1,n=15)
+~'strName.replace()'; /searchParameter/gi is needed when doing replace. the 'g' stands for global, we want to match every occurence on the string. the 'i' means case sensitive (i.e both lower & upper case acceptable).
+
 
 ~ console.log(colors[i]+ ' '); i found that adding '' to an array element like earlier, will result in the array being printed without the square brackets.
 
@@ -492,4 +508,44 @@ The sequence of parameters
     function disp(s:string,n:number):void;
 example:
     function disp (x:any, y?:any): void {}; // means that variable 'y' is optional.
+=================================================================
+
+WEEK6
+-------
+OBJECTS 
+-------
+Objects are simillar to arrays with the only distinguishing factor is they are created with curly brackets as oppossed to the square brackets used in arrays. objects can contain different element types (i.e ':string, :number, function, etc'). it is also importantto note that empty objects can be created as well. see syntax below;
+    let pets = { animalType: string; or animalType: 'name of animal'   }
+objects can also be denoted as key and value parts/pad. the key is a string and is nestled inside parenthesis ('' or ""), this is the difference between a key and value using this method. if you have more than 1 key and value pair, they can be seperated with the help of a coma (","). FYI if the value for the key is going to be a string, it will also be nestled in parenthesis. it is also important to note that if the key starts with a number, we cannot call the function. see syntax below;
+    let pets ={ "name": "john", "speak": function() {console.log("speaking);}, "1name": "peter"}
+    console.log(pets.name); // the console will log john;
+    console.log(pets.speak); // console logs function() {...};
+    console.log(pets.speak()); // console executes the function, cos it was invoked by adding ();
+    console.log(pets["1name"]); // we added the square bracket as a work around to enable us call the element.
+we can also change the content of objects. it works kinda like the array. we can also increase the object elements. see syntax below for examples;
+    pets["1name"] = "1john"; // this changes "1name" to "1john";
+    pets["2name"] = "2john"; // this will push 2name into the pets object list;
+
+USEFUL NOTES
+================
+~ 'typeof(nameOfWhatever)'; this will give the type of the element in question.
+~ 'new Object()'; this creates an empty new object array.
+~ 'Destructuring'; so we cant put numbers directly into objects, to do that,we will have to add ':' to put into the object array. this is cos numbers cant be variable names;
+~ 'objName.foo = 42'; this creates a new index in the object called foo and assigns a value of 42 to the element (objName.foo = 42 // {foo: 42}).
+~ 'new Object() = new Object(undefined) = new Object(null)'; they all mean the same thing. 
+~ 'new Object(true)'; this creates a new boolean with value = true.
+~ 'Object.keys(objName)'; this prints out the indexes of all elements in the array. it also similar to Object.getOwnPropertNames(objName);
+~ 'Object.values(objName)'; prints out the value of element in the object/array.
+~ 'fileName.hasOwnPropert(index)'; returns true or false to if the element has a value(empty elements could have values as well, if defined)
+~ 'ObjName.hasOwnPropert("objElementName")'; returns true or false if the property called objElementName exists in the object called objName. 
+~ '...rest'; this is called the SPREAD SYNTAX(...),  it is used to assign values to a list of items we dont want to write out. [a,b,...rest] =[10,20,30,40,50]. console.log(rest) = [30,40,50]; let arr3= [a,b,c,d,e]; console.log(a,b,...arr3) //prints out [10,20,30,40,50]
+~ 'charAt(index)'; this method returns the value the character/element piece that is at that location. e.g stringName.charAt(4); // prints character at index 4.
+~ '[]'; this is an object initializer, this allows us to run expressions or codes;
+~ '[a = 40]=[]'; this allows a default value and no value as acceptable parameters. it is like a fallback incase no value if found.  // FYI a was defined earlier.
+~ 'for...of' this generates a loop that operates on a sequence of iterable objects (i.e arrays, strings, map, etc). objects are not included thus far. SYNTAX for (variable of iterable) {statement};
+~'for...in'; this statement iterates over all enumerable string properties of an object. works really well with objects. SYNTAX for (variable in object) { statement };
+
+
+
+
 

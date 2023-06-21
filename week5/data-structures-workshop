@@ -1,5 +1,26 @@
 "use strict";
 
+// Below is a famous sentence from the beginning of a famous movie, but it has a problem.
+// Someone played a prank on us and replaced the word "galaxy" with "dishwasher".
+// Please fix the sentence so that the code prints "In a galaxy far, far away" to the console
+
+function simpleReplace() {
+  // write your code here
+  
+  let example = "In a dishwasher far, far away";
+  let newExample = example.replace((/Dishwasher/gi), 'galaxy');
+
+  //console.log(example);
+  console.log(newExample);  
+}
+
+simpleReplace();
+
+export { simpleReplace };
+//==================================================================================================================
+
+"use strict";
+
 // Create an empty array which will contain names (strings)
 // Assign the type string[] to the array
 // Print out the number of elements in the array
@@ -54,7 +75,6 @@ for (let x=0; x < newArray.length; x++) {
     console.log(index + '. ' + value);        
   }
 
-// Iterate through the list in a reversed order and print out each name
 newArray.splice(1, 1);
 // console.log(newArray.reverse());
 let reverseArray: string [] = newArray.reverse();
@@ -64,8 +84,8 @@ reverseArray.forEach(element => {
 });
 
 newArray.splice(0,2);
-console.log(newArray.length);
-  
+console.log(newArray.length);  
 }
-
 listIntroduction1();
+//=================================================================
+
