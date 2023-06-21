@@ -5,9 +5,20 @@
 
 export function urlFixer() {
   let url = "https//www.reddit.com/r/nevertellmethebots";
-
+ 
   // write your code here
+    let word = 'odds'; 
+    let missingPart = 'https:';
+    let url2 = url.substr(0, 38);
+    
+    let newUrl2 = url2.concat(word);
+    url = newUrl2 
 
+    let url3 =url.substring(5, 42);
+    let newUrl3 = missingPart.concat(url3);
+    
+    url = newUrl3;
+   
   console.log(url);
 }
 
