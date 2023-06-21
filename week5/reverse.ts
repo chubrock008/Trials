@@ -22,10 +22,22 @@ reverse();
 
 export { reverse };
 
+let numbers: number [] = [3,4,5,6,7];
+
+for (let i = numbers.length;  i >= 0; i--) {
+  console.log(numbers[i]);
+  
+}
 
 
 
-function reverse1(): void {
+
+
+
+
+
+/**
+ * function reverse1(): void {
   // Write your code here:
 
   let numbers: number [] = [3,4,5,6,7];
@@ -38,21 +50,18 @@ function reverse1(): void {
     // map1 = arrayName.map(x => x);
     
     console.log(result);
-    console.log(result2);   
-     
+    console.log(result2);       
   }
-
-
 }
-
 reverse1();
-
 export { reverse1 };
 
+ */
 
 
 
-for (let i = 0; i < 1; i++) {
+/**
+ * for (let i = 0; i < 1; i++) {
 
   let array: number [] = [3,4,5,6,7];
 
@@ -60,14 +69,11 @@ for (let i = 0; i < 1; i++) {
 
     let myResult = new Array(array.length);
 
-    //console.log(myResult);   
-
+    //console.log(myResult);  
   }
-
-  console.log(array);
-  
-  
+  console.log(array);  
 }
+ */
 
 
 /**

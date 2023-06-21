@@ -5,19 +5,13 @@
 // Please fix the sentence so that the code prints "In a galaxy far, far away" to the console
 
 function simpleReplace() {
-  let example = "In a dishwasher far, far away";
-
   // write your code here
-  // 
-  //create index after each word 
-  // call the index and replace with new one
-
-  let example2 = example.replace((/diswasher/gi), 'galaxy');
-
-
-  console.log(example);
-  console.log(example2);
   
+  let example = "In a dishwasher far, far away";
+  let newExample = example.replace((/Dishwasher/gi), 'galaxy');
+
+  //console.log(example);
+  console.log(newExample);  
 }
 
 simpleReplace();
