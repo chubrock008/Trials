@@ -112,3 +112,137 @@ export function putSaturn(planetList: string[]) {
 putSaturn(planetList);
 { putSaturn };
 //========================================================================================================
+
+"use strict";
+
+// Accidentally I got the wrong URL for a funny subreddit. It's probably "odds" and not "bots".
+// Also, the URL is missing a crucial component, find out what it is and insert it too!
+
+export function urlFixer() {
+  let url = "https//www.reddit.com/r/nevertellmethebots";
+ 
+  // write your code here
+    let word = 'odds'; 
+    let missingPart = 'https:';
+    let url2 = url.substr(0, 38);
+    
+    let newUrl2 = url2.concat(word);
+    url = newUrl2 
+
+    let url3 =url.substring(5, 42);
+    let newUrl3 = missingPart.concat(url3);
+    
+    url = newUrl3;
+   
+  console.log(url);
+}
+
+urlFixer();
+//==============================================================
+
+"use strict";
+
+// Create an empty object where the keys are integers and the values are characters d
+// Assign the type Record<number, string> to the object d
+// Print out whether the object is empty or not d
+// Add the following key-value pairs to the object
+//  | Key | Value |
+//  | 97  | a     |
+//  | 98  | b     |
+//  | 99  | c     |
+//  | 65  | A     |
+//  | 66  | B     |
+//  | 67  | C     |
+// Print all the keys
+// Print all the values
+// Add value D with the key 68
+// Print how many key-value pairs are in the object
+// Print the value that is associated with key 99
+// Remove key 97 from the object
+// Print whether there is an associated value with key 100 or not
+// Remove all the key-value pairs
+// Print how many key-value pairs are in the object
+//
+// Expected output
+//
+// true
+// [ '65', '66', '67', '97', '98', '99' ]
+// [ 'A', 'B', 'C', 'a', 'b', 'c' ]
+// 7
+// c
+// false
+// 0
+
+export function mapIntroduction1() {
+  // write your code here
+  
+  type input = Record <number, string>; // this describes the type for the input.
+
+  let myObject: input = {97: 'a', 98: 'b', 99: 'c', 65: 'A', 66: 'B',  67: 'C'}; // the type of the expected input is after the object name.
+
+  if (Object.keys(myObject).length != 0) {
+      console.log('Object is not empty');
+  } 
+  else {
+      console.log('Object is empty');    
+  }
+
+  console.log(Object.keys(myObject));
+  console.log(Object.values(myObject));
+
+ myObject [68] = 'D';     // when using numbers as keys, i think its better to use square brackets as the addition method.
+ // console.log(Object.keys(myObject));
+ console.log((Object.keys(myObject)).length); 
+ console.log("The result is: " + myObject[99]);
+ // console.log((Object.values(myObject[99])));
+
+ delete myObject [97];
+  
+console.log(myObject.hasOwnProperty(100));
+
+for (var val in myObject) {
+  delete myObject[val];  // the val can be any name eg mop, head, etc
+  // console.log(myObject[index]);  
+}
+
+// myObject = {}; // is also a solution to deleting the entire object elements.
+console.log((Object.keys(myObject)).length);
+}
+
+mapIntroduction1();
+//=======================================================================================
+
+"use strict";
+
+// Write a function that joins the two lists by matching one girl with one boy into a new list
+// If someone has no pair, he/she should be added to the list on his/her own
+// Expected output: ["Eve-Joe", "Ashley-Fred", "Claire-Tom", "Kat-Todd", "Jane-Neef", "Jeff"]
+
+// write your code here
+
+const girls: string[] = ["Eve", "Ashley", "Claire", "Kat", "Jane"];
+const boys: string[] = ["Joe", "Fred", "Tom", "Todd", "Neef", "Jeff"];
+
+function makeMatches (girls :string[], boys :string[]) {
+    let makeMatches: string[] = [];
+
+    for (let x=0; x < boys.length; x++) {
+        
+        if (girls[x] != undefined) {        
+            makeMatches.push(girls[x] + '-' + boys[x]); // so what i want is to push each iteration into an array/object and log them together as one array/object element;
+        } else {
+            makeMatches.push(boys[x])
+        }
+    }
+    console.log(makeMatches);    
+}
+(makeMatches(girls, boys));
+export { makeMatches };
+
+
+
+
+
+
+
+

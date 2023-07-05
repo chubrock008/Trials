@@ -184,12 +184,21 @@ let { p: foo, q: bar } = o;
 console.log(foo); // 42
 console.log(bar); // true
 
-
-
-
-
-
-
-
+// Saw the stuff below and though it was important;
+type Employee = {
+    name?: string;
+    department?: string;
+    country?: string;
+  };
+  
+  const emp: Employee = {};
+  
+  // ✅ Explicitly checking
+  if (emp.department !== undefined) {
+    console.log(emp.department.toLowerCase()); // now string
+  }
+  
+  // ✅ Using optional chaining
+  console.log(emp.department?.toLowerCase());
 
 

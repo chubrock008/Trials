@@ -536,6 +536,7 @@ USEFUL NOTES
 ~ 'new Object(true)'; this creates a new boolean with value = true.
 ~ 'Object.keys(objName)'; this prints out the indexes of all elements in the array. it also similar to Object.getOwnPropertNames(objName);
 ~ 'Object.values(objName)'; prints out the value of element in the object/array.
+~ 'object['property'] = value'; this helps us add elements to to objects. "object['property'] = value" === "object.property = value" === "Object.assign(object, {key: 'value'})";
 ~ 'fileName.hasOwnPropert(index)'; returns true or false to if the element has a value(empty elements could have values as well, if defined)
 ~ 'ObjName.hasOwnPropert("objElementName")'; returns true or false if the property called objElementName exists in the object called objName. 
 ~ '...rest'; this is called the SPREAD SYNTAX(...),  it is used to assign values to a list of items we dont want to write out. [a,b,...rest] =[10,20,30,40,50]. console.log(rest) = [30,40,50]; let arr3= [a,b,c,d,e]; console.log(a,b,...arr3) //prints out [10,20,30,40,50]
@@ -544,8 +545,12 @@ USEFUL NOTES
 ~ '[a = 40]=[]'; this allows a default value and no value as acceptable parameters. it is like a fallback incase no value if found.  // FYI a was defined earlier.
 ~ 'for...of' this generates a loop that operates on a sequence of iterable objects (i.e arrays, strings, map, etc). objects are not included thus far. SYNTAX for (variable of iterable) {statement};
 ~'for...in'; this statement iterates over all enumerable string properties of an object. works really well with objects. SYNTAX for (variable in object) { statement };
-
-
-
-
-
+~ 'strName.substr(index, count)'; if you want to start counting from the end index should be negative. FYI spaces count as characters, also add +1 to your count. when counting from the front, the starting index is 0. spaces count as characters and counts are the actual lenght. FYI FYI substr != substring;
+~ 'strName.substring(startIndex, endIndex)'; negative counting doent work here.
+~ 'Object.keys(objectName).length'; this helps us determine the lenght of the object. this gives us the ability to peform extra manipulations, for e.g we can determine if the object is empty or not.
+~ 'objectName.constructor
+~'objName: <number, string>'; we can give objects types similar to arrays.
+~ 'objName [propert] or objName.property = ...'; we use this to add elements to the objects. i sort of prefer the square bracket method. FYI property in the square bracket represents the index.
+~ 'delete objName[property]'; this deletes the values at the particular index called property.
+~ 'for...of'; this iterates through the array/object and returns elements of the array/object. see SYNTAX for (var val of objName) {};
+~ 'for...in'; this iterates through the array/object/list and returns the index on each iteration. see SYNTAX for (var index in objName) {}. 
