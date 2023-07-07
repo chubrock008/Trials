@@ -15,6 +15,6 @@ function reverseString(toBeReversed :string) {
     console.log(reverse);    
 }
 
-reverseString(toBeReversed)
+reverseString(toBeReversed);
 
 export { reverseString };
